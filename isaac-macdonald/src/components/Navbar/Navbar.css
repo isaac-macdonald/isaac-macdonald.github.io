@@ -3,6 +3,12 @@
     padding: 10px;
 }
 
+.flex-box {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Optional: Adds space between elements */
+}
+
 .navbar h1 {
     color: #91b4d4;
     scale: 1.5;
@@ -24,3 +30,49 @@
 .navbar ul li a:hover {
     background-color: #575757;
 }
+
+.navbar-icons {
+    display: flex;
+     /* Optional: Adds spacing between icons */
+    list-style: none; /* Removes default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-icons li {
+    display: inline-block;
+}
+
+.navbar-icons .icon {
+    color: #91b4d4; /* Change this to your preferred color */
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.navbar-icons .icon:hover {
+    color: #ffffff; /* Change this to a hover effect color */
+}
+
+.navbar-icons-hidden {
+    display: flex;
+    /* Optional: Adds spacing between icons */
+    list-style: none; /* Removes default bullet points */
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+}
+
+.navbar-icons-hidden li {
+    display: inline-block;
+}
+
+.navbar-icons-hidden .icon {
+    color: #91b4d4; /* Change this to your preferred color */
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.navbar-icons-hidden .icon:hover {
+    color: #ffffff; /* Change this to a hover effect color */
+}
+

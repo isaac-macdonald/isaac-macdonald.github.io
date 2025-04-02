@@ -1,6 +1,5 @@
 .project-card {
     width: 50%; /* Set the width to 50% */
-    margin: 0 auto 20px; /* Center the card horizontally */
     border: 0px solid #ddd;
     padding: 20px;
     border-radius: 8px;
@@ -28,4 +27,24 @@
 
 .project-card a:hover {
     text-decoration: underline;
+}
+
+.techs {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-badge {
+    background-color: #333;
+    color: #91b4d4;
+    border-radius: 12px;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: 1px solid #91b4d4;
+    white-space: nowrap;
+    display: inline-block;
 }

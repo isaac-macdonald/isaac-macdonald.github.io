@@ -1,0 +1,74 @@
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    padding: 20px;
+    padding-left: 20px;
+    border-radius: 8px;
+    background-color: #1b2334;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.contact-card h2 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #91b4d4/* Remove any default margin */
+}
+.contact-card p {
+    font-size: 16px;
+    margin: 5px;
+    margin-left: 0px;
+    color: #45648b;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.contact-card .label {
+    font-size: 16px;
+    color: #91b4d4;
+    font-weight: bold;
+}
+
+.contact-card .detail {
+    font-size: 16px;
+    color: #45648b;
+}
+
+.hidden-text {
+    background-color: #2e3a4d; /* Dark background to resemble "tape" */
+    color: #aaa;
+    padding: 3px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.hidden-text:hover {
+    background-color: #3b4b63;
+}
+
+.revealed {
+    background-color: transparent;
+    color: #45648b;
+    cursor: default;
+    opacity: 0; /* Start fully invisible */
+    animation: reveal-text 0.5s ease-in-out forwards;
+    pointer-events: none;
+}
+
+/* Keyframes for a smooth fade-in effect */
+@keyframes reveal-text {
+    from {
+        opacity: 0;
+        transform: scale(0.95); /* Slight shrink effect */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
