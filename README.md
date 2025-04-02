@@ -1,1 +1,0 @@
-# isaac-macdonald.github.io
