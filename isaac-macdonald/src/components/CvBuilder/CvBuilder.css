@@ -1,0 +1,68 @@
+.card {
+    width: 100%; /* Set the width to 50% */
+    border: 0px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: left;
+    background-color: #1b2334;
+    box-sizing: border-box;
+    align-content: flex-start/* Ensure padding is included in width calculation */
+}
+
+.card input, .card textarea {
+    width: 100%; /* Ensure input and textarea take full width of the card */
+    padding: 10px; /* Match padding */
+    margin-top: 5px; /* Add a small margin at the top */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Match the border radius */
+    background-color: #f4f4f4; /* Lighter background for inputs and textareas */
+    color: #333; /* Text color */
+    font-size: 14px; /* Ensure font size matches */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.card textarea {
+    resize: vertical; /* Allow the textarea to be resized vertically */
+}
+
+.cv-builder-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    margin: 20px;
+    text-align: left;
+}
+
+label {
+    color: #91b4d4;
+}
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+form {
+    width: 50%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #91b4d4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #6b89a6;
+}

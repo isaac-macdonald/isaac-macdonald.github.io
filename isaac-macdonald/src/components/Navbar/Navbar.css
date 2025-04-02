@@ -9,6 +9,11 @@
     justify-content: space-between; /* Optional: Adds space between elements */
 }
 
+.navbar-name {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Ensures the text color is inherited (same as the rest of the text) */
+}
+
 .navbar h1 {
     color: #91b4d4;
     scale: 1.5;

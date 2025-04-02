@@ -2,6 +2,7 @@ import React from 'react';
 import { FaLinkedin, FaGithub, FaInstagram, FaFileDownload } from 'react-icons/fa';
 import './Navbar.css';
 import {Tooltip} from "react-tooltip";
+import {Link} from "react-router-dom";
 
 const Navbar: React.FC = () => {
     return (
@@ -24,7 +25,9 @@ const Navbar: React.FC = () => {
                         </a>
                     </li>
                 </ul>
-                <h1>Isaac Macdonald</h1>
+                <Link to="/" className="navbar-name">
+                    <h1>Isaac Macdonald</h1>
+                </Link>
                 <ul className="navbar-icons">
                     <li>
                         <a href="https://www.linkedin.com/in/isaac-macdonald-9415a4269/" target="_blank"
