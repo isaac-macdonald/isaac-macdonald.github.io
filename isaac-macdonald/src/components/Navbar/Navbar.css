@@ -1,0 +1,26 @@
+.navbar {
+    background-color: #1b2334;
+    padding: 10px;
+}
+
+.navbar h1 {
+    color: #91b4d4;
+    scale: 1.5;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover {
+    background-color: #575757;
+}

@@ -1,0 +1,32 @@
+.personal-info-card {
+    display: flex; /* Use flexbox for the layout */
+    align-items: flex-start; /* Vertically center the content */
+    width: 50%; /* Make the card 50% of the screen width */
+    margin: 20px; /* Center the card horizontally */
+    border: 0px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #1b2334;
+    text-align: left; /* Align text to the left */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.personal-info-card .profile-img {
+    width: 270px; /* Adjust width */
+    height: 250px; /* Adjust height */
+    border-radius: 8px; /* Optional: rounded corners for the image */
+    margin-right: 20px; /* Add space between the image and the text */
+    object-fit: cover; /* Ensure the image maintains aspect ratio */
+
+}
+
+.personal-info-card h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #91b4d4/* Remove any default margin */
+}
+
+.personal-info-card p {
+    font-size: 16px;
+    color: #45648b;
+}
