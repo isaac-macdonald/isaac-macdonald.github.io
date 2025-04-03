@@ -41,6 +41,11 @@
   text-align: center;
 }
 
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background-color: #212b42;
 }
