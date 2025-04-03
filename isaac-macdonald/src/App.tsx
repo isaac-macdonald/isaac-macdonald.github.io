@@ -9,6 +9,7 @@ import Divider from './components/Divider/Divider';
 import CvBuilder from "./components/CvBuilder/CvBuilder";
 import isaac_headshot from "./isaac_headshot.png"
 import InLinkProjectCard from "./components/InLinkProjectCard/InLinkProjectCard";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
     return (
@@ -67,6 +68,7 @@ const App = () => {
                                     phoneNumber="+64 290 0430 0248"
                                 />
                             </div>
+                            <Footer/>
                         </>
                     } />
                 </Routes>
