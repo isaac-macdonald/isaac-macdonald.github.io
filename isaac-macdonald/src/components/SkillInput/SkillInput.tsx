@@ -28,7 +28,7 @@ const SkillsInput: React.FC = () => {
                     id="skills"
                     value={skill}
                     onChange={(e) => setSkill(e.target.value)}
-                    placeholder="Add a skill"
+                    placeholder="What skills do you possess?"
                     onKeyDown={(e) => {
                         if (e.key === 'Enter') {
                             addSkill();
