@@ -45,6 +45,10 @@ body {
   background-color: #212b42;
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
 .main-content {
   display: flex;
   flex-direction: column;
