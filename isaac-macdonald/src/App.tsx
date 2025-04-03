@@ -55,7 +55,7 @@ const App = () => {
                                         link="https://github.com/isaac-macdonald/20NumberChallenge"
                                     />
                                     <ProjectCard
-                                        title="SENG201 Project"
+                                        title="Blood, Sweat, and Tears (SENG201 Project)"
                                         techs={["Java"]}
                                         description="This was a pair project for SENG201 in 2024. It is a resource management game, with the aim being to survive rounds of carts by buying and using resource towers to fill said carts up"
                                         link="https://github.com/isaac-macdonald/SENG201-project-2024"
