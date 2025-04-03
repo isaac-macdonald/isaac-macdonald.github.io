@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar'; // Import the same Navbar
 import { jsPDF } from 'jspdf'; // Import jsPDF for PDF generation
-import './CvBuilder.css'; // Assuming you've styled your component
+import './CvBuilder.css';
+import SkillsInput from "../SkillInput/SkillInput";
+import Divider from "../Divider/Divider"; // Assuming you've styled your component
 
 const CvBuilder: React.FC = () => {
     // State to hold user input values
@@ -9,6 +11,10 @@ const CvBuilder: React.FC = () => {
     const [email, setEmail] = useState('');
     const [experience, setExperience] = useState('');
     const [education, setEducation] = useState('');
+    const [number, setNumber] = useState('');
+    const [summary, setSummary] = useState('');
+    const [profile, setProfile] = useState('');
+
 
     // Function to generate PDF
     const generateCv = () => {
@@ -35,8 +41,8 @@ const CvBuilder: React.FC = () => {
             <Navbar />
             <div className="cv-builder-content">
                 <h1>Welcome to the CV Builder</h1>
-                <p>This is where you can create your CV!</p>
 
+                <Divider />
                 {/* CV Form */}
                 <form
                     onSubmit={(e) => {
@@ -44,6 +50,7 @@ const CvBuilder: React.FC = () => {
                         generateCv(); // Call generateCv function
                     }}
                 >
+                    <h1>Personal Information</h1>
                     <div className="card">
                         <label htmlFor="name">Name:</label>
                         <input
@@ -52,6 +59,28 @@ const CvBuilder: React.FC = () => {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="Your Name"
+                            required
+                        />
+                    </div>
+                    <div className="card">
+                        <label htmlFor="oneLineSummary">Short Summary:</label>
+                        <input
+                            type="text"
+                            id="summary"
+                            value={summary}
+                            onChange={(e) => setSummary(e.target.value)}
+                            placeholder="Isaac Macdonald"
+                            required
+                        />
+                    </div>
+                    <div className="card">
+                        <label htmlFor="number">Number</label>
+                        <input
+                            type="text"
+                            id="number"
+                            value={number}
+                            onChange={(e) => setNumber(e.target.value)}
+                            placeholder="+64 29 0430 0248"
                             required
                         />
                     </div>
@@ -66,6 +95,23 @@ const CvBuilder: React.FC = () => {
                             required
                         />
                     </div>
+
+                    <div className="card">
+                        <label htmlFor="profile">Profile:</label>
+                        <textarea
+                            id="profile"
+                            value={profile}
+                            onChange={(e) => setProfile(e.target.value)}
+                            placeholder="Write your profile"
+                        />
+                    </div>
+
+                    <SkillsInput />
+
+                    <Divider />
+
+                    <h1>Work Experience</h1>
+
                     <div className="card">
                         <label htmlFor="experience">Work Experience:</label>
                         <textarea

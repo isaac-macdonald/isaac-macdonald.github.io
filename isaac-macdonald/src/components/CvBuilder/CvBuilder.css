@@ -17,9 +17,9 @@
     margin-top: 5px; /* Add a small margin at the top */
     border: none; /* Remove default border */
     border-radius: 8px; /* Match the border radius */
-    background-color: #f4f4f4; /* Lighter background for inputs and textareas */
-    color: #333; /* Text color */
-    font-size: 14px; /* Ensure font size matches */
+    background-color: #91b4d4; /* Lighter background for inputs and textareas */
+    color: #1b2334; /* Text color */
+    font-size: 16px; /* Ensure font size matches */
     box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
@@ -59,10 +59,61 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 5px;
     font-size: 16px;
 }
 
 button:hover {
     background-color: #6b89a6;
+}
+
+.badge {
+    background-color: #333;
+    color: #91b4d4;
+    border-radius: 12px;
+    padding: 5px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 5px;
+    text-transform: capitalize;
+    border: 1px solid #91b4d4;
+    white-space: nowrap;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Flex container for the input and button */
+.skill-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the input and button */
+}
+
+.skill-input-container input {
+    flex: 1; /* Makes the input take up the remaining space */
+}
+
+.skill-input-container button {
+    background-color: #91b4d4; /* Use your existing button style */
+    color: white;
+    /*padding: 10px 20px;*/
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.skill-input-container button:hover {
+    background-color: #6b89a6;
+}
+
+.skills-badges {
+    margin-top: 15px; /* Add a gap of 15px between the input container and the badges */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Adds space between individual badges, if needed */
+}
+
+h1 {
+    color: #91b4d4;
+    text-align: left;
 }
