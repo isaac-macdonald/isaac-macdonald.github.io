@@ -1,7 +1,10 @@
 .navbar {
-    background-color: #1b2334;
+    background-color: #758ECD;
     padding: 10px;
+    box-shadow: 12px 12px 0 0 #000;
 }
+
+
 
 .flex-box {
     display: flex;
@@ -15,7 +18,7 @@
 }
 
 .navbar h1 {
-    color: #91b4d4;
+    color: #000;
     scale: 1.5;
 }
 

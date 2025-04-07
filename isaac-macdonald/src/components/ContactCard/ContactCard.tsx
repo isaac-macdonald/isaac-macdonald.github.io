@@ -16,22 +16,13 @@ const PersonalInfoCard: React.FC<PersonalInfoCardProps> = ({ email, phoneNumber 
             <p><strong className="label">Email:</strong> <span className="detail">{email}</span></p>
             <p><strong className="label">Number:</strong> <span className="detail">{phoneNumber}</span></p>
             <p>
-                <strong className="label">Address:</strong>
-                <span
-                    className={`detail hidden-text ${revealed ? 'revealed' : ''}`}
-                    onClick={() => setRevealed(true)}
-                >
-                    {revealed ? "Take me out to dinner first, holy" : "Tap to reveal"}
-                </span>
-            </p>
-            <p>
                 <strong className="label">Download Resume:</strong>
                 <a
                     href="/Isaac_Macdonald_Resume_Updated_2-4-2025.pdf"
                     download="Isaac_Macdonald_Resume"
                     className="download-link"
                 >
-                    <Download size={20} color="#91b4d4"/>
+                    <Download size={20} color="#000"/>
                 </a>
             </p>
         </div>

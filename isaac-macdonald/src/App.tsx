@@ -32,11 +32,6 @@ const App = () => {
                                 <Divider />
                                 <h2>Projects</h2>
                                 <div className="projects">
-                                    <InLinkProjectCard
-                                        title="Cv Builder - WIP"
-                                        techs={["React", "JavaScript"]}
-                                        description="This is an in browser cv builder that allows users to input their own fields and infomation for a cv and allows them to export a pdf of it."
-                                    />
                                     <ProjectCard
                                         title="WineTime (SENG202 Project)"
                                         techs={["Java"]}
@@ -62,11 +57,6 @@ const App = () => {
                                         link="https://github.com/isaac-macdonald/SENG201-project-2024"
                                     />
                                 </div>
-                                <Divider />
-                                <ContactCard
-                                    email="imacdonald135@gmail.com"
-                                    phoneNumber="+64 290 0430 0248"
-                                />
                             </div>
                             <Footer/>
                         </>

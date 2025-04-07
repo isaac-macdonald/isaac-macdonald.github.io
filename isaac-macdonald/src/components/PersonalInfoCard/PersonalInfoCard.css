@@ -1,58 +1,78 @@
 .personal-info-card {
     display: flex;
     align-items: flex-start;
-    width: 50%;
+    width: 70%;
     border: 0px solid #ddd;
     padding: 20px;
-    border-radius: 8px;
-    background-color: #1b2334;
+    background-color: #758ECD;
     text-align: left;
     box-sizing: border-box;
+    box-shadow: 12px 12px 0 0 black;
+    position: relative;
+
+}
+
+.personal-info-card::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    border: 2px solid #000;
+    pointer-events: none;
 }
 
 .personal-info-card .profile-img {
     width: 270px;
     height: 250px;
-    border-radius: 8px;
     margin-right: 20px;
     object-fit: cover;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 0 black;
 }
 
 .personal-info-card h2 {
     font-size: 24px;
     margin: 0;
-    color: #91b4d4;
+    color: #000;
 }
 
 .personal-info-card h3 {
     font-size: 20px;
     margin: 0;
-    color: #91b4d4;
+    color: #000;
 }
 
 .personal-info-card p {
     font-size: 16px;
-    color: #45648b;
+    color: #000;
 }
 
 .skills {
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
 }
 
 .skill-badge {
-    background-color: #333;
-    color: #91b4d4;
-    border-radius: 12px;
-    padding: 5px 12px;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: capitalize;
-    border: 1px solid #91b4d4;
-    white-space: nowrap;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+    padding: 6px 10px;
+    font-size: 12px;
+    cursor: default;
+    user-select: none;
     display: inline-block;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 #000;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-badge:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #000;
 }
 
 .header {
