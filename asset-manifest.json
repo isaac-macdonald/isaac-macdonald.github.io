@@ -1,21 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.dfce247c.css",
-    "main.js": "/static/js/main.978dee80.js",
+    "main.css": "/static/css/main.ccf0edb8.css",
+    "main.js": "/static/js/main.0ea60e63.js",
     "static/js/239.330d4095.chunk.js": "/static/js/239.330d4095.chunk.js",
     "static/js/977.d9f9213e.chunk.js": "/static/js/977.d9f9213e.chunk.js",
     "static/js/732.987e0822.chunk.js": "/static/js/732.987e0822.chunk.js",
     "static/js/453.33c590ba.chunk.js": "/static/js/453.33c590ba.chunk.js",
     "static/media/isaac_headshot.png": "/static/media/isaac_headshot.165c18c12446002ff539.png",
+    "static/media/spotifyDatabase.png": "/static/media/spotifyDatabase.72309d41a0ca82fef3b3.png",
+    "static/media/gameOfLifeIntermission.png": "/static/media/gameOfLifeIntermission.690a892b410b81f0d448.png",
+    "static/media/gameOfLifeGameplay.png": "/static/media/gameOfLifeGameplay.61e59619e99c6b020609.png",
+    "static/media/gameOfLifeHomeScreen.png": "/static/media/gameOfLifeHomeScreen.a5729ab37a5956e66c37.png",
+    "static/media/spotifyEmail.png": "/static/media/spotifyEmail.8dd4d4ca1b6d5cea15dc.png",
+    "static/media/wineTime3.png": "/static/media/wineTime3.f57dca41db554d14076e.png",
+    "static/media/wineTime2.png": "/static/media/wineTime2.594e6eac9e8966dc2335.png",
+    "static/media/wineTime1.png": "/static/media/wineTime1.2b498d92c6519dc93162.png",
     "index.html": "/index.html",
-    "main.dfce247c.css.map": "/static/css/main.dfce247c.css.map",
-    "main.978dee80.js.map": "/static/js/main.978dee80.js.map",
+    "main.ccf0edb8.css.map": "/static/css/main.ccf0edb8.css.map",
+    "main.0ea60e63.js.map": "/static/js/main.0ea60e63.js.map",
     "239.330d4095.chunk.js.map": "/static/js/239.330d4095.chunk.js.map",
     "732.987e0822.chunk.js.map": "/static/js/732.987e0822.chunk.js.map",
     "453.33c590ba.chunk.js.map": "/static/js/453.33c590ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dfce247c.css",
-    "static/js/main.978dee80.js"
+    "static/css/main.ccf0edb8.css",
+    "static/js/main.0ea60e63.js"
   ]
 }
