@@ -33,13 +33,6 @@
     pointer-events: none;
 }
 
-.project-card.mouse-entered {
-    background: radial-gradient(
-            circle at var(--mouse-x, 5%) var(--mouse-y, 5%),
-            #f5510a,
-            #310af5 80%
-    );
-}
 
 
 .project-card.mouse-entered h3 {
@@ -87,4 +80,19 @@
 .tech-badge:hover {
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0 0 #000;
+}
+
+img {
+    border: none;
+    box-shadow: none;
+}
+
+.project-image {
+    border: 2px solid black;
+    box-shadow: 6px 6px 0 0 #000;
+    width: 85%;
+    height: auto;
+    margin: 15px auto;
+    display: block;
+
 }

@@ -6,9 +6,10 @@ interface ProjectCardProps {
     techs: string[];
     description: string;
     link: string;
+    imageFilenames?: string[];
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, techs, description, link }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, techs, description, link, imageFilenames }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [isMouseInside, setIsMouseInside] = useState(false);
 
@@ -61,6 +62,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, techs, description, li
                 ))}
             </div>
             <p>{description}</p>
+            {imageFilenames && imageFilenames.map((filename, index) => (
+                <img key={index} src={filename} alt={`${title} screenshot ${index + 1}`} className="project-image" />
+            ))}
             <button
                 className="project-link"
                 onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
