@@ -54,9 +54,9 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100%;
-  margin: 20px;
   text-align: left;
 }
 
@@ -67,7 +67,7 @@ body, html {
 
 .projects {
   display: flex;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   justify-content: center;
   gap: 20px;
 }
@@ -90,8 +90,28 @@ button {
 
 button:hover {
   background-color: white;
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 0 #000;
+}
+
+button:active {
   transform: translate(5px, 5px);
   box-shadow: 0 0 0 0 #000;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+@media (max-width: 768px) {
+  button:hover {
+    /* Disable hover effect on small screens */
+    transform: none;
+    box-shadow: 5px 5px 0 0 #000;
+  }
+
+  button:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0 0 0 0 #000;
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
 }
 
 

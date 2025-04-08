@@ -31,12 +31,14 @@ const App = () => {
                         <>
                             <Navbar />
                             <div className="main-content">
-                                <PersonalInfoCard
-                                    name="About me"
-                                    bio="I am a 3rd year software engineering student at the University of Canterbury who enjoys using my skill set to develop meaningful and useful apps. Other than software development my hobbies include surfing, movie-watching, performing, and skiing."
-                                    imageUrl={isaac_headshot}
-                                    skills={['React', 'TypeScript', 'Python', 'Java', 'Git', 'ThymeLeaf', 'Bootstrap', 'C', 'Dask', 'Springboot', 'JavaFX', 'Scene builder', 'Junit', 'Node.js', "css", "html"]}
-                                />
+                                <div className="projects">
+                                    <PersonalInfoCard
+                                        name="About me"
+                                        bio="I am a 3rd year software engineering student at the University of Canterbury who enjoys using my skill set to develop meaningful and useful apps. Other than software development my hobbies include surfing, movie-watching, performing, and skiing."
+                                        imageUrl={isaac_headshot}
+                                        skills={['React', 'TypeScript', 'Python', 'Java', 'Git', 'ThymeLeaf', 'Bootstrap', 'C', 'Dask', 'Springboot', 'JavaFX', 'Scene builder', 'Junit', 'Node.js', "css", "html"]}
+                                    />
+                                </div>
                                 <Divider />
                                 <h2>Projects</h2>
                                 <div className="projects">
