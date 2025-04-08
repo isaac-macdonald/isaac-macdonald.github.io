@@ -12,6 +12,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, techs, description, link, imageFilenames }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [isMouseInside, setIsMouseInside] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
         const card = cardRef.current;
@@ -29,10 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, techs, description, li
             card.style.setProperty('--mouse-y', `${percentY}%`);
         };
 
-        const handleMouseEnter = () => {
-            setIsMouseInside(true);
-        };
-
+        const handleMouseEnter = () => setIsMouseInside(true);
         const handleMouseLeave = () => {
             setIsMouseInside(false);
             card.style.removeProperty('--mouse-x');
@@ -50,6 +48,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, techs, description, li
         };
     }, []);
 
+    const handleNext = () => {
+        if (!imageFilenames) return;
+        setCurrentImageIndex((prev) => (prev + 1) % imageFilenames.length);
+    };
+
+    const handlePrev = () => {
+        if (!imageFilenames) return;
+        setCurrentImageIndex((prev) => (prev - 1 + imageFilenames.length) % imageFilenames.length);
+    };
+
     return (
         <div
             className={`project-card ${isMouseInside ? 'mouse-entered' : ''}`}
@@ -62,9 +70,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, techs, description, li
                 ))}
             </div>
             <p>{description}</p>
-            {imageFilenames && imageFilenames.map((filename, index) => (
-                <img key={index} src={filename} alt={`${title} screenshot ${index + 1}`} className="project-image" />
-            ))}
+
+            {imageFilenames && (
+                <div>
+                    <img
+                        src={imageFilenames[currentImageIndex]}
+                        alt={`${title} screenshot ${currentImageIndex + 1}`}
+                        className="project-image fade"
+                    />
+                    <div>
+                        <button onClick={handlePrev}>&lt;</button>
+                        <button onClick={handleNext}>&gt;</button>
+                    </div>
+                </div>
+            )
+            }
+
             <button
                 className="project-link"
                 onClick={() => window.open(link, "_blank", "noopener,noreferrer")}

@@ -43,7 +43,7 @@ const App = () => {
                                     <ProjectCard
                                         title="Custom Spotify Database"
                                         techs={["Python", "html"]}
-                                        description="his project is for any experimentation with the spotify api using spotipy. So far I have been recording all the songs I listen to and have implemented a custom spotify wrapped weekly email."
+                                        description="This project is for any experimentation with the spotify api using spotipy. So far I have been recording all the songs I listen to and have implemented a custom spotify wrapped weekly email."
                                         link="https://github.com/isaac-macdonald/custom-spotify-data"
                                         imageFilenames={[spotifyProjectPhoto1, spotifyProjectPhoto2]}
                                     />
