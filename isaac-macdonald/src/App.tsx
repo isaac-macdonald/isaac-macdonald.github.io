@@ -52,7 +52,7 @@ const App = () => {
                                     <ProjectCard
                                         title="WineTime (SENG202 Project)"
                                         techs={["Java"]}
-                                        description="This is a game that was developed in a group project for SENG202 last year. It is designed to help users browse through over 100 000 wines."
+                                        description="This is an application that was developed in a group project for SENG202 last year. It is designed to help users browse through over 100 000 wines."
                                         link="https://github.com/isaac-macdonald/SENG202-WineTime"
                                         imageFilenames={[wineTimePhoto1, wineTimePhoto2, wineTimePhoto3]}
                                     />
