@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import ProjectCard from './components/ProjectCard/ProjectCard';
 import PersonalInfoCard from './components/PersonalInfoCard/PersonalInfoCard';
-import ContactCard from "./components/ContactCard/ContactCard";
 import Divider from './components/Divider/Divider';
 import CvBuilder from "./components/CvBuilder/CvBuilder";
 import isaac_headshot from "./isaac_headshot.png"
@@ -16,7 +15,6 @@ import spotifyProjectPhoto2 from "./spotifyEmail.png"
 import wineTimePhoto1 from "./wineTime1.png"
 import wineTimePhoto2 from "./wineTime2.png"
 import wineTimePhoto3 from "./wineTime3.png"
-import InLinkProjectCard from "./components/InLinkProjectCard/InLinkProjectCard";
 import Footer from "./components/Footer/Footer";
 
 const App = () => {
