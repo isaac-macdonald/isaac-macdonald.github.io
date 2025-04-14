@@ -1,76 +1,143 @@
-import React from 'react';
+import React, { JSX, useEffect, useState, useRef, useLayoutEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-import ProjectCard from './components/ProjectCard/ProjectCard';
-import PersonalInfoCard from './components/PersonalInfoCard/PersonalInfoCard';
-import Divider from './components/Divider/Divider';
-import CvBuilder from "./components/CvBuilder/CvBuilder";
-import isaac_headshot from "./isaac_headshot.png"
-import gameOfLifePhoto1 from "./gameOfLifeHomeScreen.png"
-import gameOfLifePhoto2 from "./gameOfLifeIntermission.png"
-import gameOfLifePhoto3 from "./gameOfLifeGameplay.png"
-import spotifyProjectPhoto1 from "./spotifyDatabase.png"
-import spotifyProjectPhoto2 from "./spotifyEmail.png"
-import wineTimePhoto1 from "./wineTime1.png"
-import wineTimePhoto2 from "./wineTime2.png"
-import wineTimePhoto3 from "./wineTime3.png"
-import Footer from "./components/Footer/Footer";
+// import About from './commands/About';
+import Projects from './commands/Projects';
+// import Skills from './commands/Skills';
+// import Help from './commands/Help';
+import ManPage from './commands/ManPage';
+
+const COMPONENTS: Record<string, JSX.Element> = {
+    man: <ManPage />,
+    // about: <About />,
+    projects: <Projects />,
+    // skills: <Skills />,
+    // help: <Help />,
+};
 
 const App = () => {
-    return (
-        <Router>
-            <div className="App">
-                <Routes>
-                    <Route path="/cv-builder" element={<CvBuilder />} />
-                        {/* New CV Builder Page */}
+    const [history, setHistory] = useState<JSX.Element[]>([]);
+    const [input, setInput] = useState('');
+    const [suggestions, setSuggestions] = useState<string[]>([]);
+    const terminalOutputRef = useRef<HTMLDivElement | null>(null);
+    const lastHistoryItemRef = useRef<HTMLDivElement | null>(null);
 
-                    <Route path="/" element={
-                        <>
-                            <Navbar />
-                            <div className="main-content">
-                                <div className="projects">
-                                    <PersonalInfoCard
-                                        name="About me"
-                                        bio="I am a 3rd year software engineering student at the University of Canterbury who enjoys using my skill set to develop meaningful and useful apps. Other than software development my hobbies include surfing, movie-watching, performing, and skiing."
-                                        imageUrl={isaac_headshot}
-                                        skills={['React', 'TypeScript', 'Python', 'Java', 'Git', 'ThymeLeaf', 'Bootstrap', 'C', 'Dask', 'Springboot', 'JavaFX', 'Scene builder', 'Junit', 'Node.js', "css", "html"]}
-                                    />
-                                </div>
-                                <Divider />
-                                <h2>Projects</h2>
-                                <div className="projects">
-                                    <ProjectCard
-                                        title="Custom Spotify Database"
-                                        techs={["Python", "html"]}
-                                        description="This project is for any experimentation with the spotify api using spotipy. So far I have been recording all the songs I listen to and have implemented a custom spotify wrapped weekly email."
-                                        link="https://github.com/isaac-macdonald/custom-spotify-data"
-                                        imageFilenames={[spotifyProjectPhoto1, spotifyProjectPhoto2]}
-                                    />
-                                    <ProjectCard
-                                        title="WineTime (SENG202 Project)"
-                                        techs={["Java"]}
-                                        description="This is an application that was developed in a group project for SENG202 last year. It is designed to help users browse through over 100 000 wines."
-                                        link="https://github.com/isaac-macdonald/SENG202-WineTime"
-                                        imageFilenames={[wineTimePhoto1, wineTimePhoto2, wineTimePhoto3]}
-                                    />
-                                    <ProjectCard
-                                        title="Game of life (and death)"
-                                        techs={["Python"]}
-                                        description="This is a game I made, designed to be played in the termin. It is based on Conway's game of life, and the objective of the game is to navigate through endless rounds of chaos trying to score points."
-                                        link="https://github.com/isaac-macdonald/The-Game-of-Life"
-                                        imageFilenames={[gameOfLifePhoto1, gameOfLifePhoto2, gameOfLifePhoto3]}
-                                    />
-                                </div>
-                            </div>
-                            <Footer/>
-                        </>
-                    } />
-                </Routes>
+    // Track which suggestion is currently highlighted for cycling
+    const [highlightedSuggestion, setHighlightedSuggestion] = useState<number | null>(null);
+
+    useEffect(() => {
+        setHistory([<ManPage key="man" />]);
+    }, []);
+
+    // Scroll to the last added item after it renders
+    useLayoutEffect(() => {
+        if (lastHistoryItemRef.current) {
+            lastHistoryItemRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, [history]);
+
+    const handleCommand = (command: string) => {
+        const cmd = command.toLowerCase().trim();
+        if (cmd === 'clear') {
+            setHistory([]);
+            return;
+        }
+        const component = COMPONENTS[cmd];
+        if (component) {
+            setHistory(prev => {
+                const newHistory = [
+                    ...prev,
+                    <div
+                        key={Date.now()}
+                        ref={lastHistoryItemRef}  // Set ref to the last history item
+                    >
+                        <span className="prompt-line">user@isaac-macdonald.github.io:~$ {cmd}</span>{component}
+                    </div>
+                ];
+                return newHistory;
+            });
+        } else {
+            setHistory(prev => {
+                const newHistory = [
+                    ...prev,
+                    <div
+                        key={Date.now()}
+                        ref={lastHistoryItemRef}  // Set ref to the last history item
+                    >
+                        <span className="prompt-line">user@isaac-macdonald.github.io:~$ {cmd}</span>
+                        <pre>Command not found: {cmd}</pre>
+                    </div>
+                ];
+                return newHistory;
+            });
+        }
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!input.trim()) return;
+        handleCommand(input);
+        setInput('');
+        setSuggestions([]);
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const val = e.target.value;
+        setInput(val);
+
+        // Find commands that start with the current input value
+        const matchedCommands = Object.keys(COMPONENTS).filter(c => c.startsWith(val));
+        setSuggestions(matchedCommands);
+        setHighlightedSuggestion(null);  // Reset highlighted suggestion when input changes
+    };
+
+    const handleTab = (e: React.KeyboardEvent) => {
+        if (e.key !== 'Tab') return;
+
+        e.preventDefault(); // Prevent default Tab behavior
+
+        if (suggestions.length === 1) {
+            // Autofill if there's exactly one match
+            setInput(suggestions[0]);
+        } else if (suggestions.length > 1) {
+            // Cycle through the suggestions if there are multiple matches
+            const nextIndex = (highlightedSuggestion === null)
+                ? 0
+                : (highlightedSuggestion + 1) % suggestions.length;
+            setHighlightedSuggestion(nextIndex);
+            setInput(suggestions[nextIndex]);
+        }
+    };
+
+    return (
+        <div className="terminal">
+            <div className="terminal-output" ref={terminalOutputRef}>
+                {history}
             </div>
-        </Router>
+            {suggestions.length > 0 && (
+                <div className="suggestions">
+                    {suggestions.map((s, i) => (
+                        <div
+                            key={i}
+                            style={{
+                                backgroundColor: highlightedSuggestion === i ? 'lightgray' : 'transparent',
+                            }}
+                        >
+                            {s}
+                        </div>
+                    ))}
+                </div>
+            )}
+            <form onSubmit={handleSubmit} className="terminal-input">
+                <span className="prompt">user@isaac-macdonald.github.io:~$</span>
+                <input
+                    value={input}
+                    onChange={handleChange}
+                    onKeyDown={handleTab}  // Handle Tab key press
+                    autoFocus
+                />
+            </form>
+        </div>
     );
 };
 
 export default App;
-
