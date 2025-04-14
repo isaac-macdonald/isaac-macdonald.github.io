@@ -4,7 +4,7 @@ const ManPage = () => {
     return (
         <div className="man-page">
       <pre>{`
-PORTFOLIO(1)              Isaac Macdonald Portfolio Manual              PORTFOLIO(1)
+                          Isaac Macdonald Portfolio Manual              
 
 NAME
     portfolio - personal command-line interface for Isaac Macdonald
@@ -28,35 +28,21 @@ COMMANDS
     projects
         View a list of personal and university-based software projects,
         each with descriptions, tech stacks, and screenshots.
-
-    skills
-        Display a list of technical skills including languages, frameworks,
-        tools, and platforms.
-
-    help
-        Show a list of available commands with descriptions.
+    
+    github
+        View my GitHub profile
+        
+    instagram
+        View my Instagram profile
+        
+    linkedin
+        View my LinkedIn profile
 
     clear
         Clear the terminal output.
 
-EXAMPLES
-    $ about
-        Displays a short bio and profile photo.
-
-    $ projects
-        Opens a set of terminal-style project cards with images and links.
-
-    $ skills
-        Lists technical proficiencies grouped by category.
-
 AUTHOR
-    Isaac Macdonald
-    GitHub: https://github.com/isaac-macdonald
-
-SEE ALSO
-    https://isaacmacdonald.dev
-
-                                                                    Isaac Macdonald
+    Isaac Macdonald                                                                   
       `}</pre>
         </div>
     );

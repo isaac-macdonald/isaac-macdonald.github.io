@@ -54,12 +54,25 @@ body, html {
 
 .terminal-card {
   border: 1px solid white;
-  padding: 30px;
+  padding: 50px;
   margin: 30px;
   background: #000;
   max-width: 800px;
   box-shadow: 10px 10px 0 0 white;
+  position: relative;
 }
+
+.terminal-card::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border: 1px solid white;
+  pointer-events: none;
+}
+
 
 .terminal-card img {
   width: 100%;
@@ -73,3 +86,169 @@ body, html {
   font-size: 1rem;
 }
 
+button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  box-shadow: 5px 5px 0 0 white;
+  border: 2px solid white;
+  cursor: pointer;
+  margin: 10px auto;
+  font-size: 16px;
+  font-family: 'JetBrains Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+
+button:hover {
+  background-color: black;
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 0 white;
+}
+
+button:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0 0 0 0 white;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+@media (max-width: 768px) {
+  button:hover {
+    /* Disable hover effect on small screens */
+    transform: none;
+    box-shadow: 5px 5px 0 0 white;
+  }
+
+  button:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0 0 0 0 white;
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
+}
+
+.tech-badge {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: default;
+  margin-left: 10px;
+  user-select: none;
+  display: inline-block;
+  box-shadow: 4px 4px 0 #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tech-badge:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 #fff;
+}
+
+.personal-info-card {
+  display: flex;
+  align-items: flex-start;
+  width: 60%;
+  padding: 40px;
+  margin: 20px;
+  background-color: black;
+  text-align: left;
+  box-sizing: border-box;
+  border: 1px solid white;
+  box-shadow: 12px 12px 0 0 white;
+  position: relative;
+
+}
+
+.personal-info-card::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border: 1px solid white;
+  pointer-events: none;
+}
+
+.personal-info-card .profile-img {
+  width: 270px;
+  height: 250px;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 1px solid white;
+  box-shadow: 5px 5px 0 0 white;
+}
+
+.personal-info-card h2 {
+  font-size: 24px;
+  margin: 0;
+  color: white;
+}
+
+.personal-info-card h3 {
+  font-size: 20px;
+  margin: 0;
+  color: white;
+}
+
+.personal-info-card p {
+  font-size: 16px;
+  color: white;
+}
+
+.skills {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-badge {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: default;
+  user-select: none;
+  display: inline-block;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-badge:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 #fff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Optional: space between elements */
+}
+
+@media (max-width: 768px) {
+  .personal-info-card {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 30px;
+  }
+
+  .personal-info-card .profile-img {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px; /* Optional: to avoid image being too large */
+    height: auto;
+  }
+
+
+  .skills {
+    justify-content: left; /* Center skill badges */
+  }
+}

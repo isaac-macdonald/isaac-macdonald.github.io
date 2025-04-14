@@ -1,17 +1,16 @@
 import React, { JSX, useEffect, useState, useRef, useLayoutEffect } from 'react';
 import './App.css';
-// import About from './commands/About';
 import Projects from './commands/Projects';
-// import Skills from './commands/Skills';
-// import Help from './commands/Help';
 import ManPage from './commands/ManPage';
+import About from "./commands/About";
 
 const COMPONENTS: Record<string, JSX.Element> = {
     man: <ManPage />,
-    // about: <About />,
+    about: <About />,
     projects: <Projects />,
-    // skills: <Skills />,
-    // help: <Help />,
+    github: <></>,
+    instagram: <></>,
+    linkedin: <></>
 };
 
 const App = () => {
@@ -41,6 +40,62 @@ const App = () => {
             setHistory([]);
             return;
         }
+        if (cmd === 'github') {
+            window.open('https://github.com/isaac-macdonald', '_blank', 'noopener,noreferrer');
+            setHistory(prev => [
+                ...prev,
+                <div
+                    key={Date.now()}
+                    ref={lastHistoryItemRef}
+                >
+                    <span className="prompt-line">user@isaac-macdonald.github.io:~$ {cmd}</span>
+                    <pre>Opening GitHub profile...</pre>
+                </div>
+            ]);
+            return;
+        }
+        if (cmd === 'instagram') {
+            window.open('https://www.instagram.com/isaac__macdonald/', '_blank', 'noopener,noreferrer');
+            setHistory(prev => [
+                ...prev,
+                <div
+                    key={Date.now()}
+                    ref={lastHistoryItemRef}
+                >
+                    <span className="prompt-line">user@isaac-macdonald.github.io:~$ {cmd}</span>
+                    <pre>Opening Instagram profile...</pre>
+                </div>
+            ]);
+            return;
+        }
+        if (cmd === 'linkedin') {
+            window.open('https://www.linkedin.com/in/isaac-macdonald-9415a4269/', '_blank', 'noopener,noreferrer');
+            setHistory(prev => [
+                ...prev,
+                <div
+                    key={Date.now()}
+                    ref={lastHistoryItemRef}
+                >
+                    <span className="prompt-line">user@isaac-macdonald.github.io:~$ {cmd}</span>
+                    <pre>Opening LinkedIn profile...</pre>
+                </div>
+            ]);
+            return;
+        }
+        if (cmd === 'github') {
+            window.open('https://github.com/isaac-macdonald', '_blank', 'noopener,noreferrer');
+            setHistory(prev => [
+                ...prev,
+                <div
+                    key={Date.now()}
+                    ref={lastHistoryItemRef}
+                >
+                    <span className="prompt-line">user@isaac-macdonald.github.io:~$ {cmd}</span>
+                    <pre>Opening GitHub profile...</pre>
+                </div>
+            ]);
+            return;
+        }
         const component = COMPONENTS[cmd];
         if (component) {
             setHistory(prev => {
@@ -63,7 +118,7 @@ const App = () => {
                         key={Date.now()}
                         ref={lastHistoryItemRef}  // Set ref to the last history item
                     >
-                        <span className="prompt-line">user@isaac-macdonald.github.io:~$ {cmd}</span>
+                        <span className="prompt-line">user@isaac-macdonald.github.io:~$å {cmd}</span>
                         <pre>Command not found: {cmd}</pre>
                     </div>
                 ];
