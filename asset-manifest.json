@@ -1,7 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.84996df6.css",
-    "main.js": "/static/js/main.1487c77d.js",
+    "main.css": "/static/css/main.2aaa540a.css",
+    "main.js": "/static/js/main.9bf0eaae.js",
+    "static/js/239.330d4095.chunk.js": "/static/js/239.330d4095.chunk.js",
+    "static/js/977.d9f9213e.chunk.js": "/static/js/977.d9f9213e.chunk.js",
+    "static/js/732.987e0822.chunk.js": "/static/js/732.987e0822.chunk.js",
     "static/js/453.33c590ba.chunk.js": "/static/js/453.33c590ba.chunk.js",
     "static/media/isaac_headshot.png": "/static/media/isaac_headshot.165c18c12446002ff539.png",
     "static/media/spotifyDatabase.png": "/static/media/spotifyDatabase.72309d41a0ca82fef3b3.png",
@@ -13,12 +16,14 @@
     "static/media/wineTime2.png": "/static/media/wineTime2.594e6eac9e8966dc2335.png",
     "static/media/wineTime1.png": "/static/media/wineTime1.2b498d92c6519dc93162.png",
     "index.html": "/index.html",
-    "main.84996df6.css.map": "/static/css/main.84996df6.css.map",
-    "main.1487c77d.js.map": "/static/js/main.1487c77d.js.map",
+    "main.2aaa540a.css.map": "/static/css/main.2aaa540a.css.map",
+    "main.9bf0eaae.js.map": "/static/js/main.9bf0eaae.js.map",
+    "239.330d4095.chunk.js.map": "/static/js/239.330d4095.chunk.js.map",
+    "732.987e0822.chunk.js.map": "/static/js/732.987e0822.chunk.js.map",
     "453.33c590ba.chunk.js.map": "/static/js/453.33c590ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84996df6.css",
-    "static/js/main.1487c77d.js"
+    "static/css/main.2aaa540a.css",
+    "static/js/main.9bf0eaae.js"
   ]
 }
